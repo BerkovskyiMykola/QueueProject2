@@ -19,5 +19,8 @@ namespace QueueProject.Models
 
         public Guid RoleId { get; set; }
         public Role? Role { get; set; }
+
+        public List<Place> Places { get; set; } = new List<Place>();
+        public List<QueuePerson> QueuePeople { get; set; } = new List<QueuePerson>();
     }
 }

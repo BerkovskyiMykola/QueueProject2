@@ -123,12 +123,14 @@ namespace QueueProject.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(x => x.QueuePeople).SingleOrDefaultAsync(x => x.Id == id);
 
             if (user == null)
             {
                 return NotFound();
             }
+
+            _context.QueuePeople.RemoveRange(user.QueuePeople);
 
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
