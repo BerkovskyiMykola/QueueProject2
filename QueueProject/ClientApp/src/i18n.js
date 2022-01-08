@@ -18,7 +18,8 @@ i18n.use(LanguageDetector).init({
                 defaultOption: "Choose an option",
                 Actions: "Actions",
                 ListEmpty: "List is empty",
-
+                Yes: "Yes",
+                No: "No",
                 SignUp: "Sign Up",
                 LogOut: "LogOut",
                 Login: "Login",
@@ -37,6 +38,11 @@ i18n.use(LanguageDetector).init({
                 backupName: "Backup name",
                 database: "Database",
                 users: "Users",
+                places: "Places",
+                name: "Title",
+                address: "Address",
+                active: "Active",
+                isActive: "Active",
 
                 "This field is required!": "This field is required!",
                 "This is not a valid email": "This is not a valid email",
@@ -62,7 +68,8 @@ i18n.use(LanguageDetector).init({
                 defaultOption: "Виберіть варіант",
                 Actions: "Дії",
                 ListEmpty: "Список пустий",
-
+                Yes: "Так",
+                No: "Ні",
                 SignUp: "Зареєструватись",
                 LogOut: "Вийти",
                 Login: "Ввійти",
@@ -81,6 +88,11 @@ i18n.use(LanguageDetector).init({
                 backupName: "Назва бекапа",
                 database: "База даних",
                 users: "Користувачі",
+                places: "Місця",
+                name: "Назва",
+                address: "Адреса",
+                active: "Активно",
+                isActive: "Активно",
 
                 "This field is required!": "Це поле необхідне!",
                 "This is not a valid email": "Це не валідна пошта",

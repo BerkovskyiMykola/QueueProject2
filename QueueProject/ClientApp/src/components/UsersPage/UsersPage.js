@@ -42,7 +42,7 @@ const UsersPage = () => {
             .catch(() => { })
     }
 
-    const getUserValues = (item) => {
+    const getValues = (item) => {
         const { id, firstname, lastname, email, roleId } = item;
         setModel({ id, firstname, lastname, email, password: "", role: roleId });
         dispatch(clearMessage());
@@ -63,7 +63,7 @@ const UsersPage = () => {
         return (
             <td>
                 <button
-                    onClick={() => { getUserValues(item) }}
+                    onClick={() => { getValues(item) }}
                     style={{ marginRight: "3px" }}
                     className="btn btn-outline-success btn-sm float-left">
                     <i className="bi-pencil-square" />

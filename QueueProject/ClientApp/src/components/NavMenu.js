@@ -62,6 +62,20 @@ const NavMenu = () => {
                                         </NavItem>
                                     </>
                                 }
+                                {user.role === "PlaceOwner" &&
+                                    <>
+                                        <NavItem>
+                                            <NavLink tag={Link} to="/ownPlaces">{t("places")}</NavLink>
+                                        </NavItem>
+                                    </>
+                                }
+                                {user.role === "User" &&
+                                    <>
+                                        <NavItem>
+                                            <NavLink tag={Link} to="/places">{t("places")}</NavLink>
+                                        </NavItem>
+                                    </>
+                                }
                                 <li className="nav-item">
                                     <a href="/login" className="nav-link" onClick={logOut}>
                                         {t("LogOut")}
