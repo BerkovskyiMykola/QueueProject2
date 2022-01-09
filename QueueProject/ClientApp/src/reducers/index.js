@@ -5,6 +5,7 @@ import profile from "./profile";
 import database from "./database";
 import user from "./user";
 import place from "./place";
+import queuePerson from "./queuePerson";
 
 export default combineReducers({
     auth,
@@ -12,5 +13,6 @@ export default combineReducers({
     profile,
     database,
     user,
-    place
+    place,
+    queuePerson
 });

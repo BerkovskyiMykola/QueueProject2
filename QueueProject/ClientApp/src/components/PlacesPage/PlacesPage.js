@@ -3,6 +3,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import List from '../ListComponents/List'
 import { useTranslation } from 'react-i18next';
 import { getAvailablePlaces } from '../../actions/place';
+import { createQueuePerson } from '../../actions/queuePerson';
 
 const PlacesPage = () => {
     const { t } = useTranslation();
@@ -16,6 +17,18 @@ const PlacesPage = () => {
         dispatch(getAvailablePlaces(t));
     }, [dispatch, t])
 
+    const action = (item) => {
+        return (
+            <td>
+                <button
+                    onClick={() => { dispatch(createQueuePerson(item.id, t)) }}
+                    className="btn btn-outline-success btn-sm float-left">
+                    {t("Queue up")}
+                </button>
+            </td>
+        )
+    }
+
     return (
         <>
             <List
@@ -24,6 +37,7 @@ const PlacesPage = () => {
                 k="id"
                 columns={['name', 'address']}
                 refreshRecords={() => { dispatch(getAvailablePlaces(t)) }}
+                action={action}
             />
         </>
     );

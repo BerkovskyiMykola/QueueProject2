@@ -18,6 +18,7 @@ import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 
 import './App.css'
 import { OwnPlacesPage, PlacesPage } from './components/PlacesPage';
+import QueuePeoplePage from './components/QueuePeoplePage';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const App = () => {
                 <PrivateRoute exact path="/users" component={UsersPage} roles={["Admin"]} />
                 <PrivateRoute exact path="/places" component={PlacesPage} roles={["User"]} />
                 <PrivateRoute exact path="/ownPlaces" component={OwnPlacesPage} roles={["PlaceOwner"]} />
+                <PrivateRoute exact path="/queuePeople/:id" component={QueuePeoplePage} roles={["PlaceOwner"]} />
                 <Route path="/404" component={NotFound} />
                 <Redirect to="/404" />
             </Layout>

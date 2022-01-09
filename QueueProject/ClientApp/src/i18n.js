@@ -43,6 +43,11 @@ i18n.use(LanguageDetector).init({
                 address: "Address",
                 active: "Active",
                 isActive: "Active",
+                queuePeople: "Queue",
+                created: "Date and Time",
+                status: "Status",
+                "Already in queue": "Already in queue",
+                "Queue up": "Queue up",
 
                 "This field is required!": "This field is required!",
                 "This is not a valid email": "This is not a valid email",
@@ -93,6 +98,11 @@ i18n.use(LanguageDetector).init({
                 address: "Адреса",
                 active: "Активно",
                 isActive: "Активно",
+                queuePeople: "Черга",
+                created: "Дата й час",
+                status: "Статус",
+                "Already in queue": "Вже в черзі",
+                "Queue up": "Стати в чергу",
 
                 "This field is required!": "Це поле необхідне!",
                 "This is not a valid email": "Це не валідна пошта",

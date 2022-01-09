@@ -7,7 +7,7 @@ import { clearMessage } from '../../actions/message';
 import { FieldInput, SelectInput } from '../FormComponents';
 import ModalWindow from '../ModalWindow/ModalWindow';
 
-const OwnPlacesPage = () => {
+const OwnPlacesPage = (props) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
 
@@ -66,8 +66,14 @@ const OwnPlacesPage = () => {
                 </button>
                 <button
                     onClick={() => { dispatch(deletePlace(item.id, t)) }}
+                    style={{ marginRight: "3px" }}
                     className="btn btn-outline-danger btn-sm float-left">
                     <i className="bi-trash" />
+                </button>
+                <button
+                    onClick={() => { props.history.push("queuePeople/" + item.id) }}
+                    className="btn btn-outline-info btn-sm float-left">
+                    <i class="bi-folder2-open" />
                 </button>
             </td>
         )
