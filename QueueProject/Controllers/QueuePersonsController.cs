@@ -48,6 +48,43 @@ namespace QueueProject.Controllers
             });
         }
 
+        [Authorize(Roles = "User")]
+        [HttpGet("own/all")]
+        public async Task<IActionResult> GetQueues()
+        {
+            var places = await _context.Places
+                .Include(x => x.QueuePeople)
+                .ThenInclude(x => x.Status)
+                .Where(x => x.QueuePeople.Any(x => x.UserId.ToString() == HttpContext.User.Identity!.Name)).ToListAsync();
+
+            return Ok(places.Select(x => new {
+                    x.QueuePeople.SingleOrDefault(x => x.UserId.ToString() == HttpContext.User.Identity!.Name)!.Id,
+                    x.QueuePeople.SingleOrDefault(x => x.UserId.ToString() == HttpContext.User.Identity!.Name)!.Created,
+                    x.Name,
+                    x.Address,
+                    Status = x.QueuePeople.SingleOrDefault(x => x.UserId.ToString() == HttpContext.User.Identity!.Name)!.Status!.Name,
+                    Number = x.QueuePeople.Count(y => y.Created <= x.QueuePeople.SingleOrDefault(x => x.UserId.ToString() == HttpContext.User.Identity!.Name)!.Created)
+           }));
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpDelete("delete/own/{id}")]
+        public async Task<IActionResult> DeleteOwnQueuePerson(Guid id)
+        {
+            var queuePerson = await _context.QueuePeople
+                .SingleOrDefaultAsync(x => x.Id == id && x.UserId.ToString() == HttpContext.User.Identity!.Name);
+
+            if (queuePerson == null)
+            {
+                return NotFound();
+            }
+
+            _context.QueuePeople.Remove(queuePerson);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         [Authorize(Roles = "PlaceOwner")]
         [HttpPut("edit/{id}")]
         public async Task<IActionResult> PutQueuePerson(Guid id, QueuePerson model)

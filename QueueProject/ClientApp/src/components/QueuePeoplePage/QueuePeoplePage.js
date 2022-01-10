@@ -27,7 +27,7 @@ const QueuePeoplePage = (props) => {
     useEffect(() => {
         dispatch(getQueuePerson(id, t));
         dispatch(getStatuses(t));
-    }, [dispatch, t])
+    }, [dispatch, id, t])
 
     const clearFields = () => {
         setModel({ id: "", status: "" });

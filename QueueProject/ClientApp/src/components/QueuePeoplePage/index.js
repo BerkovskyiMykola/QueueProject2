@@ -1,3 +1,4 @@
 import QueuePeoplePage from "./QueuePeoplePage";
+import OwnQueuesPage from "./OwnQueuesPage";
 
-export default QueuePeoplePage;
+export { QueuePeoplePage, OwnQueuesPage };

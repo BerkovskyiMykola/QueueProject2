@@ -24,6 +24,14 @@ class QueuePersonService {
     deleteQueuePerson(id) {
         return axios.delete(API_URL + "delete/" + id, { headers: authHeader() });
     }
+
+    getQueues() {
+        return axios.get(API_URL + "own/all", { headers: authHeader() });
+    }
+
+    deleteOwnQueuePerson(id) {
+        return axios.delete(API_URL + "delete/own/" + id, { headers: authHeader() });
+    }
 }
 
 export default new QueuePersonService();

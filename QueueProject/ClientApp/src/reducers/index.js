@@ -6,6 +6,7 @@ import database from "./database";
 import user from "./user";
 import place from "./place";
 import queuePerson from "./queuePerson";
+import ownQueuePerson from "./ownQueuePerson";
 
 export default combineReducers({
     auth,
@@ -14,5 +15,6 @@ export default combineReducers({
     database,
     user,
     place,
-    queuePerson
+    queuePerson,
+    ownQueuePerson
 });

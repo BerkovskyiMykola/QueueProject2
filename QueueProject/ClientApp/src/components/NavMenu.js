@@ -73,7 +73,10 @@ const NavMenu = () => {
                                     <>
                                         <NavItem>
                                             <NavLink tag={Link} to="/places">{t("places")}</NavLink>
-                                        </NavItem>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} to="/queues">{t("queues")}</NavLink>
+                                    </NavItem>
                                     </>
                                 }
                                 <li className="nav-item">

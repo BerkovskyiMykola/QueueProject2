@@ -48,6 +48,8 @@ i18n.use(LanguageDetector).init({
                 status: "Status",
                 "Already in queue": "Already in queue",
                 "Queue up": "Queue up",
+                queues: "Queues",
+                number: "Number",
 
                 "This field is required!": "This field is required!",
                 "This is not a valid email": "This is not a valid email",
@@ -103,6 +105,8 @@ i18n.use(LanguageDetector).init({
                 status: "Статус",
                 "Already in queue": "Вже в черзі",
                 "Queue up": "Стати в чергу",
+                queues: "Черги",
+                number: "Номер",
 
                 "This field is required!": "Це поле необхідне!",
                 "This is not a valid email": "Це не валідна пошта",
