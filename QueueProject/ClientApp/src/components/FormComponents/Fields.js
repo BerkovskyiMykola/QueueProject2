@@ -32,11 +32,10 @@ export const EmailInput = ({ name, validate, setValidate, model, setModel }) => 
                 }}
             />
             <FormFeedback>
-                Uh oh! Looks like there is an issue with your email. Please input
-                a correct email.
+                {t("Uh oh! Looks like there is an issue with your email. Please input a correct email.")}
             </FormFeedback>
             <FormFeedback valid>
-                That's a tasty looking email you've got there.
+                {t("That's a tasty looking email you've got there.")}
             </FormFeedback>
         </FormGroup>
     );

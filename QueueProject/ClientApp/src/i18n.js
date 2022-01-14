@@ -50,6 +50,8 @@ i18n.use(LanguageDetector).init({
                 "Queue up": "Queue up",
                 queues: "Queues",
                 number: "Number",
+                "Uh oh! Looks like there is an issue with your email. Please input a correct email.": "Uh oh! Looks like there is an issue with your email. Please input a correct email.",
+                "That's a tasty looking email you've got there.": "That's a tasty looking email you've got there.",
 
                 "This field is required!": "This field is required!",
                 "This is not a valid email": "This is not a valid email",
@@ -107,6 +109,8 @@ i18n.use(LanguageDetector).init({
                 "Queue up": "Стати в чергу",
                 queues: "Черги",
                 number: "Номер",
+                "Uh oh! Looks like there is an issue with your email. Please input a correct email.": "Ой-ой! Схоже, виникла проблема з вашою електронною поштою. Будь ласка, введіть правильний електронний лист. ",
+                "That's a tasty looking email you've got there.": "Це виглядає як електронний лист, який ви ввели. ",
 
                 "This field is required!": "Це поле необхідне!",
                 "This is not a valid email": "Це не валідна пошта",
